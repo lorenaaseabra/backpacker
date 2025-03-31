@@ -92,16 +92,6 @@ Acesse em: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## 🌐 Créditos de imagem
-
-Imagens aleatórias do [Unsplash](https://unsplash.com/) utilizando a URL dinâmica, como:
-
-```
-https://source.unsplash.com/1600x900/?mountains,adventure,travel
-```
-
----
-
 ## 📄 Licença
 
 Projeto com fins educacionais e open-source. Fique à vontade para clonar, estudar, adaptar e usar!
