@@ -2,6 +2,7 @@ import sys
 
 cidades = ["Berlim", "Viena", "Bruxelas", "Praga", "Copenhague", "Paris", "Atenas", "Budapeste", "Roma", "Lisboa", "Madrid"]
 
+# Matriz de adj 11x11 -> n x n -> o(n²)
 grafo = [
     [0, 680, 770, 350, 620, 1050, 0, 870, 0, 0, 0],
     [680, 0, 0, 300, 0, 0, 0, 220, 1100, 0, 0],
@@ -21,29 +22,30 @@ def dijkstra(grafo, cidade_origem, cidade_destino, cidades):
     origem_idx = cidades.index(cidade_origem)
     destino_idx = cidades.index(cidade_destino)
     
-    distancias = [sys.maxsize] * num_cidades
+    distancias = [sys.maxsize] * num_cidades 
     visitados = [False] * num_cidades
     anteriores = [-1] * num_cidades
     
     distancias[origem_idx] = 0
     
-    for _ in range(num_cidades):
+    #nó com menor distancia ainda n visitado 
+    for _ in range(num_cidades): # roda n vezes → o(n)
         min_distancia = sys.maxsize
         min_indice = -1
-        for v in range(num_cidades):
+        for v in range(num_cidades): #passa por todas as cidades p encontrar a n visitada -> o(n)
             if not visitados[v] and distancias[v] < min_distancia:
                 min_distancia = distancias[v]
                 min_indice = v
-        
+        # se não tiver distancia menor ai termina
         if min_indice == -1:
             break
-        
+        #marca como visitado
         visitados[min_indice] = True
-        
+        #se chega no destino ele termina
         if min_indice == destino_idx:
             break
-        
-        for v in range(num_cidades):
+        #att as distancias p/ os vizinhos
+        for v in range(num_cidades): # passa p todas as iteração do loop principal, o(n) p/ cada if -> o(n²) 
             if grafo[min_indice][v] > 0:
                 if distancias[min_indice] + grafo[min_indice][v] < distancias[v]:
                     distancias[v] = distancias[min_indice] + grafo[min_indice][v]
@@ -51,7 +53,7 @@ def dijkstra(grafo, cidade_origem, cidade_destino, cidades):
     
     if distancias[destino_idx] == sys.maxsize:
         return None, None
-    
+    #reconstroi de tras p frente e printa o caminho todo
     caminho = []
     atual = destino_idx
     while atual != -1:
