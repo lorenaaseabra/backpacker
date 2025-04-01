@@ -2,16 +2,12 @@
 
 **Backpacker** é uma aplicação fullstack desenvolvida para ajudar mochileiros a planejarem suas rotas de viagem entre capitais europeias, utilizando o algoritmo de Dijkstra para calcular o caminho mais curto.
 
-![Banner](https://source.unsplash.com/1600x400/?backpacking,adventure,travel)
-
 ---
 
 ## ✨ Funcionalidades
 
-- 🌍 Interface bonita e responsiva inspirada em sites de turismo premium
 - 📍 Cálculo do melhor caminho entre cidades usando o algoritmo de Dijkstra
 - 🔁 Integração entre frontend (React) e backend (FastAPI)
-- 🧠 UX amigável e acessível
 - 🎒 Ideal para mochileiros e exploradores!
 
 ---
@@ -92,16 +88,6 @@ Acesse em: [http://localhost:5173](http://localhost:5173)
 │   ├── tailwind.config.js
 │   ├── postcss.config.js
 │   └── index.html
-```
-
----
-
-## 🌐 Créditos de imagem
-
-Imagens aleatórias do [Unsplash](https://unsplash.com/) utilizando a URL dinâmica, como:
-
-```
-https://source.unsplash.com/1600x900/?mountains,adventure,travel
 ```
 
 ---
